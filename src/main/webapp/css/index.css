@@ -224,7 +224,7 @@ input {
 }
 
 #swiper_map_box .swiper-pagination-bullet {
-    margin: 0px 5px;
+    margin: 0 5px;
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -234,11 +234,10 @@ input {
 
 .top_img_box {
     width: 100%;
-    min-width: 1170px;
+    height: 40.26vw;
     overflow: hidden;
     position: relative;
     object-fit: cover;
-    height: 500px;
 }
 
 .introduce_box {
@@ -572,7 +571,7 @@ body {
 }
 
 .box_center {
-    width: 900px;
+    width: 1182px;
 }
 
 .banner {
@@ -591,7 +590,6 @@ body {
     width: 100%;
     font-size: 35px;
     text-align: center;
-    font-weight: bold;
 }
 
 .title2 {
@@ -619,14 +617,39 @@ body {
     margin-top: 20px;
 }
 
-.project_intro img {
-    width: 300px;
-    height: 450px;
+.project_intro .left_img {
+    width: 274px;
+    height: 398px;
 }
 
-.project_intro span {
+.project_intro .right_img {
+    width: 295px;
+    height: 399px;
+}
+
+.project_intro .txt {
     flex: 1;
-    margin-left: 20px;
+    margin-left: 42px;
+    margin-right: 52px;
+}
+
+.project_intro .txt .title {
+    display: block;
+    font-size: 23px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    text-align: left;
+    text-align: -webkit-left;
+}
+
+.project_intro .txt .content {
+    display: block;
+    font-size: 14px;
+    margin-top: 50px;
+    color: #777373;
+    text-align: left;
+    text-align: -webkit-left;
 }
 
 .net {
