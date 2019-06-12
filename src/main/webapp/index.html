@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>ATLAS 寰图</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/ddzu.css">
+    <script src="js/jquery-1.12.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
+<!--suppress JSUnresolvedFunction -->
 <script type="text/javascript">
     // 地图标签
-    var markers = [{
+    let markers = [{
         content: "上海华旭大厦",
         title: "上海华旭大厦",
         imageOffset: {
@@ -96,59 +101,201 @@
     }];
 
     window.onload = function () {
-        var iframe = window.frames["map_frame"];
+        let iframe = window.frames["map_frame"];
         iframe.setMarkers(markers);
+        openSwiper();
     };
 
-    function jump(tag) {
-        var url = "https://sh.diandianzu.com/listing/detail-i";
-        switch (tag) {
-            case "huaxu":
-                url += "7078";
-                break;
-            case "yinhang":
-                url += "6165";
-                break;
-            case "zhaoshang":
-                url += "7680";
-                break;
-            case "gefei":
-                url += "7139";
-                break;
-            case "baiyulan":
-                url += "4018";
-                break;
-            case "yajule":
-                url += "7566";
-                break;
-            case "zhendan":
-                url += "4735";
-                break;
-        }
-        url += ".html";
-        window.open(url, "_blank");
+    function openSwiper() {
+        new Swiper('#swiper_top_info', {
+            loop: true,
+            autoplay: 7000,
+            pagination: '#swiper_position',
+            paginationClickable: true,
+            autoplayDisableOnInteraction: false,
+        });
     }
 </script>
 
 <body>
-<div id="float_title_box">
-    <div id="float_title">
+<div class="container-fluid header header-listing headerPosition">
+    <div id="siteMapID" class="siteMap">
+        <div class="siteMapContent">
+            <div class="fl">
+                <a href="https://sh.diandianzu.com/" class="normal-text tj-pc-menu-homePage-click">首页</a>
+                <a href="https://sh.diandianzu.com/listing/bt4/" class="current tj-pc-menu-findListing-click">找办公室</a>
+                <a href="https://sh.diandianzu.com/business/requirement/" class="tj-pc-menu-weituo-click normal-text">委托找房</a>
+                <a href="https://sh.diandianzu.com/business/index/"
+                   class="tj-pc-menu-tuofang-click normal-text">投放房源</a>
+                <a href="https://sh.diandianzu.com/gift/" class="gift tj-pc-menu-gift-click  normal-text">企业礼包</a>
+                <a href="http://www.diandianzu.com/news/" class="normal-text tj-pc-menu-listingNews-click">楼市资讯</a>
+                <a href="https://sh.diandianzu.com/listing/map.html" class="normal-text tj-pc-menu-listingMap-click">地图找房</a>
+            </div>
+            <div class="fr">
 
-        <img class="logo" src="img/nav_logo.png" alt="寰图"/>
-        <div class="title_left ib">
-            <a href="http://www.diandianzu.com" class="normal-text tj-pc-menu-homePage-click">首页</a>
+                <a id="qrCodeAnchor" class="collect qrCode-anchor">
+                    <i class="txt">APP | 小程序</i>
+                    <div id="qrCode" class="qrCode hide">
+                        <div class="arrowUp top-arrow"></div>
+                        <div>
+                            <div class="inline-block" style="width: 9px; height: 1px;"></div>
+                            <div class="inline-block">
+                                <img src="https://images.diandianzu.com/Public/Home/v5/images/public/appQRCode.png"
+                                     alt="">
+                                <div class="txt">下载点点租APP</div>
+                            </div>
+                            <div class="inline-block" style="width: 22px; height: 1px;"></div>
+                            <div class="inline-block">
+                                <img src="https://images.diandianzu.com/Public/Home/v5/images/public/appletQRCode.png"
+                                     alt="">
+                                <div class="txt">点点租小程序</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="javascript:" data-url="/public/userlogout/" class="btn-logout hide header-logout-btn"
+                   title="退出登录">
+                    <i class="logout iconfont"></i>
+                </a>
+
+                <a class="service-phone gatj-header-400"><i class="iconfont">&#xe61f;</i><i
+                        class="phone">4000-623-678</i></a>
+            </div>
         </div>
-        <a class="service_phone"><i class="phoneimg"></i><i class="phone">4000-623-678</i></a>
     </div>
-</div>
 
-<div id="float_title_box2">
+    <div style="clear:both"></div>
+
+    <div class="header-con header-con-height70">
+        <a href="https://sh.diandianzu.com/" class="logo-small fl">
+            <img src="https://images.diandianzu.com/Public/Home/v5/images/public/nav_logo.png" class="hide" width="80px"
+                 height="28px" alt="点点租">
+        </a>
+        <div class="city-pull-down fl city-pull-down-border">
+            <span class="city-pull-down-bg inline-block">
+                <i class="txt">上海</i>
+                <i class="iconfont city-toggle-icon">&#xe625;</i>
+            </span>
+            <div class="city-select">
+                <div class="header-current-city">
+                    上海 <i class="iconfont city-toggle-icon">&#xe625;</i>
+                </div>
+                <div class="clearfix header-city-box">
+                    <div class="header-tips">热门城市</div>
+                    <div class="header-city-list clearfix">
+                        <a href="//sh.diandianzu.com/" class="fl header-city-item header-city-item-selected">上海</a>
+                        <a href="//gz.diandianzu.com/" class="fl header-city-item ">广州</a>
+                        <a href="//sz.diandianzu.com/" class="fl header-city-item ">深圳</a>
+                        <a href="//hz.diandianzu.com/" class="fl header-city-item ">杭州</a>
+                        <a href="//xa.diandianzu.com/" class="fl header-city-item ">西安</a>
+                    </div>
+                    <div class="header-split-line"></div>
+                    <div class="header-tips">其它城市</div>
+                    <div class="header-city-list clearfix">
+                        <a href="//bj.diandianzu.com/" class="fl header-city-item  ">北京</a>
+                        <a href="//su.diandianzu.com/" class="fl header-city-item  ">苏州</a>
+                        <a href="//nj.diandianzu.com/" class="fl header-city-item  ">南京</a>
+                        <a href="//nb.diandianzu.com/" class="fl header-city-item  ">宁波</a>
+                        <a href="//hf.diandianzu.com/" class="fl header-city-item  header-margin-auto">合肥</a>
+                        <a href="//cd.diandianzu.com/" class="fl header-city-item  ">成都</a>
+                        <a href="//london.diandianzu.com/" class="fl header-city-item  ">伦敦</a>
+                    </div>
+                    <div class="header-city-box-footer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <a href="https://sh.diandianzu.com/listing/" class="tj-pc-nav-cowork-click">写字楼</a>
+            <a href="https://sh.diandianzu.com/listing/bt2/" class="tj-pc-nav-cowork-click ">联合办公</a>
+            <a href="https://sh.diandianzu.com/listing/bt4/" class="tj-pc-nav-house-click ">优选好房<span
+                    class="newTips"></span></a></div>
+        <div class="search">
+            <form id="public_form_search" action="https://sh.diandianzu.com/listing/index" method="get">
+                <input type="hidden" id="homeUid" value="">
+                <input type="hidden" id="homeMobile" value="">
+                <input type="hidden" id="loginUrl" value="/public/userlogin/">
+                <input type="hidden" id="logoutUrl" value="/public/userlogout/">
+                <input type="hidden" id="loginStatusUrl" value="/public/getuserloginstatus/">
+                <input type="hidden" id="currentCity" value="80">
+                <!--suppress HtmlFormInputWithoutLabel -->
+                <input type="text" name="kw" value="" id="kw-search"
+                       style="behavior: url(https://images.diandianzu.com/Public/Home/v5/css/PIE.htc);" maxlength="20"
+                       class="placeholder fl header-kw-search acInput" placeholder="请输入大厦名称或区域位置" autocomplete="off">
+                <input type="hidden" id="map-href" value="/listing/map.html">
+                <i class="iconfont btn-search">&#xe60d;</i>
+            </form>
+        </div>
+    </div>
+
+    <!--suppress JSJQueryEfficiency, JSValidateTypes -->
+    <script>
+        $("#qrCodeAnchor").hover(function () {
+
+            $('#qrCode').removeClass('hide');
+
+        }, function () {
+
+            $('#qrCode').addClass('hide');
+        });
+
+        $(".header .city-pull-down").click(function (event) {
+            $('.city-pull-down .arrow-icon').toggle();
+            $(".header .city-pull-down .city-select").stop(true).slideToggle();
+            if (window.event) {
+                window.event.cancelBubble = true;
+            } else {
+                event.stopPropagation();
+            }
+        });
+
+        $('.btn-search').click(function () {
+
+            let strHref = $('#public_form_search').attr('action');
+            let strSearch = document.getElementById("kw-search").value;
+            strHref = strHref.replace(/.html/, "");
+            if (strHref.substr(strHref.length - 1, 1) === '/') {
+                strHref = strHref.substring(0, strHref.length - 1);
+            }
+            if (strSearch) {
+                strHref += "?kw=" + encodeURIComponent(document.getElementById("kw-search").value);
+            }
+            window.location.href = strHref + '';
+        });
+
+        //回车搜索
+        $("body").delegate("#kw-search", "keyup", function (e) {
+            if (e.keyCode === 13) {
+                $(".btn-search").click();
+                return false;
+            }
+        });
+
+        $(window).scroll(function () {
+            pageScroll();
+        });
+
+        function pageScroll() {
+            let scroll = $(window).scrollTop();
+            if (scroll < 40) {
+                $('.header').addClass('headerPosition');
+                $('#siteMapID').removeClass('hide');
+            } else {
+                $('.header').removeClass('headerPosition');
+                $('#siteMapID').addClass('hide');
+            }
+        }
+    </script>
 </div>
 
 <img class="top_img_box" src="img/_1_banner.jpg" alt="寰图"/>
 
-<div class="box_center title">
-    <span class="title">ALTLAS Workplace 寰图办公空间</span>
+<div class="box_center">
+    <div class="title">
+        <span>ALTLAS Workplace 寰图办公空间</span>
+        <div class="line" style="width: 500px"></div>
+    </div>
 </div>
 
 <div class="box_center project_intro">
@@ -156,7 +303,7 @@
 
     <div class="txt">
         <span class="title">
-            ATLAS寰图是领先的CBD甲级写字楼全生态运营商。
+            ATLAS寰图是领先的CBD甲级写字楼全生态运营商
         </span>
         <span class="content">
             ATLAS寰图目前在北京、上海、广州、深圳、杭州、西安、香港及越南胡志明市拥有24个综合办公空间，管理总面积达
@@ -172,63 +319,126 @@
 </div>
 
 <div class="box_center">
-    <div class="title2">
-        <span>精选网点</span>
-        <div class="line"></div>
-    </div>
+    <a href="https://sh.diandianzu.com/listing/index?kw=huantu/" class="read_more clickable">查看更多</a>
 </div>
 
-<div class="box_center net">
-    <div class="net_row">
-        <div class="net_item clickable" onclick="jump('huaxu')">
+<div class="swiper-container swiper_top_info" id="swiper_top_info">
+    <div class="swiper-wrapper" id="top_image_list">
+        <div class="swiper-slide">
             <img src="img/_3_huaxu.jpg" alt=""/>
-            <span>寰图办公室·上海华旭大厦</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室·上海华旭大厦
+                </div>
+                <div class="info_content">
+                    位于上海华旭国际大厦 11 层，建筑面积
+                    超 1,300 平方米。办公空间紧邻南京路步
+                    行街，艾美酒店和来福士广场， 地处人民
+                    广场和人民公园的东北角，是上海中心城
+                    区黄金地段的钻石位置。本项目为寰图首
+                    家 ATLAS Premium 办公空间，以美式设
+                    计风格为主，营造出低调奢华的办公环境。
+                    <br><br>
+                    项目配备灵活的服务式办公室及联合办公空
+                    间， 满足不同规模的企业及会员的办公需求。
+                </div>
+            </div>
         </div>
-
-        <div class="net_item clickable" onclick="jump('yinhang')">
+        <div class="swiper-slide">
             <img src="img/_3_yinhang.jpg" alt=""/>
-            <span>寰图办公室·上海银行大厦</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室·上海银行大厦
+                </div>
+                <div class="info_content">
+                    位于......
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="net_row">
-        <div class="net_item clickable" onclick="jump('zhaoshang')">
+        <div class="swiper-slide">
             <img src="img/_3_zhaoshang.jpg" alt=""/>
-            <span>寰图办公室&生活空间·上海招商局大厦</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室&生活空间·上海招商局大厦
+                </div>
+                <div class="info_content">
+                    位于......
+                </div>
+            </div>
         </div>
-
-        <div class="net_item clickable" onclick="jump('gefei')">
+        <div class="swiper-slide">
             <img src="img/_3_gefei.jpg" alt=""/>
-            <span>寰图办公室&生活空间·上海歌斐中心</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室&生活空间·上海歌斐中心
+                </div>
+                <div class="info_content">
+                    位于......
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="net_row">
-        <div class="net_item clickable" onclick="jump('baiyulan')">
+        <div class="swiper-slide">
             <img src="img/_3_baiyulan.jpg" alt=""/>
-            <span>寰图办公室·上海白玉兰广场</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室·上海白玉兰广场
+                </div>
+                <div class="info_content">
+                    位于......
+                </div>
+            </div>
         </div>
-
-        <div class="net_item clickable" onclick="jump('yajule')">
+        <div class="swiper-slide">
             <img src="img/_3_yajule.jpg" alt=""/>
-            <span>寰图办公室&生活空间·上海雅居乐国际广场</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室&生活空间·上海雅居乐国际广场
+                </div>
+                <div class="info_content">
+                    位于......
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="net_row">
-        <div class="net_item clickable" onclick="jump('zhendan')">
+        <div class="swiper-slide">
             <img src="img/_3_zhendan.jpg" alt=""/>
-            <span>寰图办公室·上海震旦国际大楼</span>
+            <div class="info_box">
+                <div class="info_title">
+                    项目介绍
+                </div>
+                <div class="info_subtitle">
+                    寰图办公室·上海震旦国际大楼
+                </div>
+                <div class="info_content">
+                    位于......
+                </div>
+            </div>
         </div>
-
-        <div class="net_item"></div>
     </div>
+    <div class="swiper_position swiper_top" id="swiper_position"></div>
 </div>
 
 <div class="box_center">
-    <div class="title2">
+    <div class="title">
         <span>热租户型</span>
-        <div class="line"></div>
+        <div class="line" style="width: 120px"></div>
     </div>
 </div>
 
@@ -236,25 +446,49 @@
     <div class="hot_rental_row">
         <div class="hot_rental_item">
             <img src="img/_4_rezu_10.jpg" alt=""/>
-            <span>10人间</span>
+            <span class="name">10人间</span>
+            <span class="address">寰图办公空间·上海华旭大厦</span>
+            <span class="location">黄浦-人民广场</span>
+            <span class="description">10人间供选择，其中包括xx提供地毯，24小时的内容</span>
+            <div>
+                <span class="price_txt">特价：</span>
+                <span class="price">30000</span>
+                <span class="s_price">24000</span>
+            </div>
         </div>
 
         <div class="hot_rental_item">
             <img src="img/_4_rezu_20.jpg" alt=""/>
-            <span>20人间</span>
+            <span class="name">20人间</span>
+            <span class="address">寰图办公空间·上海华旭大厦</span>
+            <span class="location">黄浦-人民广场</span>
+            <span class="description">10人间供选择，其中包括xx提供地毯，24小时的内容</span>
+            <div>
+                <span class="price_txt">特价：</span>
+                <span class="price">30000</span>
+                <span class="s_price">24000</span>
+            </div>
         </div>
 
         <div class="hot_rental_item">
             <img src="img/_4_rezu_30.jpg" alt=""/>
-            <span>30人间</span>
+            <span class="name">30人间</span>
+            <span class="address">寰图办公空间·上海华旭大厦</span>
+            <span class="location">黄浦-人民广场</span>
+            <span class="description">10人间供选择，其中包括xx提供地毯，24小时的内容</span>
+            <div>
+                <span class="price_txt">特价：</span>
+                <span class="price">30000</span>
+                <span class="s_price">24000</span>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="box_center">
-    <div class="title2">
+    <div class="title">
         <span>配套生活业态</span>
-        <div class="line" style="width: 120px;"></div>
+        <div class="line" style="width: 190px"></div>
     </div>
 </div>
 
@@ -284,6 +518,159 @@
     <!--suppress HtmlDeprecatedAttribute -->
     <iframe src="map.html" id="map_frame" name="map_frame" width="100%" height="500px" frameborder="0"
             scrolling="no"></iframe>
+</div>
+
+<div id="footer" class="container-fluid footer">
+    <div class="footer-wrap">
+        <div class="copyright fl">
+            <div class="logo-bottom"><a href="/"><img
+                    src="https://images.diandianzu.com/Public/Home/v5/images/listing/footer_logo_ddz.png" width="61"
+                    height="20" alt="点点租官网"></a></div>
+            <div>© 2014-2019</div>
+            <div>深圳爱布丁梦想科技有限公司</div>
+            <div> All Rights Reserved.</div>
+            <div class="beian">粤ICP备14032837号</div>
+            <div class="szcert">
+
+                <iframe src="https://sh.diandianzu.com/szcert.html" style="color:#696b70"></iframe>
+            </div>
+        </div>
+
+        <div class="service right-box fr">
+            <div class="ftitle">客服服务</div>
+            <div class="service-info"><span class="service-tel">4000-623-678</span><span class="service-time">(早9:00-晚8:00)</span>
+            </div>
+            <div class="service-email">support@diandianzu.com</div>
+            <div><img src="https://images.diandianzu.com/Public/Home/v5/images/listing/footer_qrcode.png"
+                      class="qr-code" alt="点点租"></div>
+        </div>
+
+        <div class="flink right-box fr">
+            <div class="clearfix">
+                <p class="ftitle fl data-sn current" id="ftitle-0" data-sn="0" onclick="tagClick(this)">友情链接</p>
+                <p class="ftitle fl flink-tab data-sn" id="ftitle-1" data-sn="1" onclick="tagClick(this)">热门办公室出租</p>
+                <p class="ftitle fl flink-tab data-sn" id="ftitle-2" data-sn="2" onclick="tagClick(this)">热门写字楼出租</p>
+                <p class="ftitle fl flink-tab data-sn" id="ftitle-3" data-sn="3" onclick="tagClick(this)">热门商务中心出租</p>
+            </div>
+
+            <div class="flink-item flink-item-0 fl">
+                <a href="http://bj.diandianzu.com/" target="_blank" class="ellipsis">北京办公室出租</a>
+                <a href="http://sh.diandianzu.com/" target="_blank" class="ellipsis">上海办公室出租</a>
+                <a href="http://gz.diandianzu.com/" target="_blank" class="ellipsis">广州办公室出租</a>
+                <a href="http://sz.diandianzu.com/" target="_blank" class="ellipsis">深圳办公室出租</a>
+                <a href="http://hz.diandianzu.com/" target="_blank" class="ellipsis">杭州办公室出租</a>
+                <a href="http://laibin.jiwu.com/" target="_blank" class="ellipsis">来宾买房</a>
+                <a href="http://ningbo.365azw.com/" target="_blank" class="ellipsis">宁波装修网</a>
+                <a href="http://sh.qizuang.com/" target="_blank" class="ellipsis">上海装修网</a>
+            </div>
+
+            <div class="flink-item flink-item-1 hide fl">
+                <a href="http://sh.diandianzu.com/listing/detail-i436.html" target="_blank"
+                   class="ellipsis">上海中心办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i1600.html" target="_blank" class="ellipsis">环球金融中心办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i32.html" target="_blank"
+                   class="ellipsis">金茂大厦办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2709.html" target="_blank" class="ellipsis">滨江万科中心办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i3050.html" target="_blank"
+                   class="ellipsis">世纪汇办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2270.html" target="_blank" class="ellipsis">新梅联合广场办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i1692.html" target="_blank" class="ellipsis">陆家嘴世纪金融广场办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2256.html" target="_blank" class="ellipsis">丁香国际商业中心办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2237.html" target="_blank" class="ellipsis">外滩SOHO办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2234.html" target="_blank" class="ellipsis">凌空SOHO办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i454.html" target="_blank"
+                   class="ellipsis">大来大楼办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i281.html" target="_blank" class="ellipsis">外滩金融中心BFC办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2519.html" target="_blank" class="ellipsis">合生国际广场办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2238.html" target="_blank" class="ellipsis">虹口SOHO办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2255.html" target="_blank" class="ellipsis">徐汇万科中心办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i3202.html" target="_blank" class="ellipsis">永丰国际广场办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2330.html" target="_blank"
+                   class="ellipsis">长宁来福士办公室出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i1545.html" target="_blank" class="ellipsis">SOHO中山广场办公室出租</a>
+                <a href="https://sh.diandianzu.com/listing/detail-i7856.html" target="_blank" class="ellipsis">eat n
+                    work 餐饮办公空间·上海正大广场办公室出租</a>
+                <a href="https://sh.diandianzu.com/listing/detail-i4735.html" target="_blank" class="ellipsis">寰图办公空间 ·
+                    上海震旦国际大楼办公室出租</a>
+                <a href="https://sh.diandianzu.com/listing/detail-i7558.html" target="_blank"
+                   class="ellipsis">展想中心办公室出租</a>
+            </div>
+
+            <div class="flink-item flink-item-2 hide fl">
+                <a href="http://sh.diandianzu.com/listing/detail-i333.html" target="_blank"
+                   class="ellipsis">科技京城写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i53.html" target="_blank"
+                   class="ellipsis">东方金融广场写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2295.html" target="_blank" class="ellipsis">华润时代广场写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2623.html" target="_blank"
+                   class="ellipsis">SVA越界写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i1587.html" target="_blank" class="ellipsis">绿地汇创国际写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2298.html" target="_blank"
+                   class="ellipsis">汤臣中心写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i360.html" target="_blank"
+                   class="ellipsis">汇银大厦写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i93.html" target="_blank"
+                   class="ellipsis">绿地和创广场写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i107.html" target="_blank"
+                   class="ellipsis">英雄大厦写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i282.html" target="_blank"
+                   class="ellipsis">仲益大厦写字楼出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i111.html" target="_blank"
+                   class="ellipsis">生命人寿大厦写字楼出租</a>
+            </div>
+
+            <div class="flink-item flink-item-3 hide fl">
+                <a href="http://sh.diandianzu.com/listing/detail-i2793.html" target="_blank"
+                   class="ellipsis">雷格斯商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2717.html" target="_blank"
+                   class="ellipsis">德事商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2906.html" target="_blank"
+                   class="ellipsis">世服宏图商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i1740.html" target="_blank"
+                   class="ellipsis">艾可士商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2837.html" target="_blank" class="ellipsis">Neo东海商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i82.html" target="_blank"
+                   class="ellipsis">Arcc商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i409.html" target="_blank"
+                   class="ellipsis">创富港商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2612.html" target="_blank" class="ellipsis">Fouder创业社区商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2267.html" target="_blank"
+                   class="ellipsis">阿波罗商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i3200.html" target="_blank" class="ellipsis">SOHO3Q商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i3072.html" target="_blank" class="ellipsis">Idream企业公馆商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i333.html" target="_blank"
+                   class="ellipsis">置拓汇商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i3320.html" target="_blank"
+                   class="ellipsis">联和空间商务中心出租</a>
+                <a href="http://sh.diandianzu.com/listing/detail-i2886.html" target="_blank" class="ellipsis">121众创空间商务中心出租</a>
+            </div>
+        </div>
+
+        <div class="aboutus right-box fr">
+            <p class="ftitle">关于点点租</p>
+            <a href="https://sh.diandianzu.com/about/">关于我们</a>
+            <a href="https://sh.diandianzu.com/about/job/">团队招聘</a>
+            <a href="https://sh.diandianzu.com/about/partner/" rel="nofollow">商务合作</a>
+            <a href="https://sh.diandianzu.com/about/help/" rel="nofollow">常见问题</a>
+            <a href="https://sh.diandianzu.com/about/terms/" rel="nofollow">条款与隐私</a>
+            <a href="https://sh.diandianzu.com/news/" target="_blank">新闻资讯</a>
+            <a href="https://sh.diandianzu.com/sitemaps.html">网站地图</a>
+            <a href="//sh.diandianzu.com/sitemaps/hotkw_list_sh.html">热门搜索词</a>
+        </div>
+
+        <script>
+            let last_data_sn = "0";
+
+            function tagClick(v) {
+                let data_sn = v.getAttribute("data-sn");
+                $(".flink-item-" + last_data_sn).addClass("hide");
+                $(".flink-item-" + data_sn).removeClass("hide");
+                $("#ftitle-" + last_data_sn).removeClass("current");
+                $("#ftitle-" + data_sn).addClass("current");
+                last_data_sn = data_sn;
+            }
+        </script>
+    </div>
 </div>
 </body>
 </html>
