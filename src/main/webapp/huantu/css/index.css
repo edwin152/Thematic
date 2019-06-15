@@ -717,3 +717,17 @@ body {
     margin-top: 10px;
     font-weight: bold;
 }
+
+.swiper-pagination-bullet {
+    background: #FFFFFF;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+
+.swiper-pagination-bullet-active{
+    background: #FFFFFF;
+    width: 20px;
+    border-radius: 5px;
+}
