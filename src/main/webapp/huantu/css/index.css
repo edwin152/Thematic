@@ -544,14 +544,14 @@ body {
 }
 
 .project_intro .left_img {
-    width: 274px;
-    height: 398px;
+    width: 591px;
+    height: 524px;
 }
 
-.project_intro .right_img {
-    width: 295px;
-    height: 399px;
-}
+/*.project_intro .right_img {*/
+/*    width: 295px;*/
+/*    height: 399px;*/
+/*}*/
 
 .project_intro .txt {
     flex: 1;
@@ -572,7 +572,7 @@ body {
 
 .project_intro .txt .content {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 25px;
     margin-top: 50px;
     color: #777373;
@@ -589,7 +589,7 @@ body {
     text-align: center;
     font-size: 23px;
     color: #ffffff;
-    margin: 80px auto 170px auto;
+    margin: 80px auto 100px auto;
 }
 
 .read_more:visited {
