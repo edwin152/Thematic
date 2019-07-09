@@ -15,6 +15,13 @@ input {
     outline: none;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 113px;
+}
+
 #title_box {
     height: 40px;
     background-color: #202020;
@@ -98,15 +105,6 @@ input {
     height: 16px;
     background-repeat: no-repeat;
     background-size: 16px 16px;
-    display: inline-block;
-}
-
-.service_phone .phoneimg {
-    background: url(../img/tel.png) no-repeat;
-    width: 24px;
-    height: 24px;
-    margin-right: 4px;
-    background-size: 24px 24px;
     display: inline-block;
 }
 
@@ -499,12 +497,6 @@ input {
     cursor: pointer;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .box_tiling {
     width: 100%;
 }
@@ -648,14 +640,16 @@ body {
     display: block;
     margin: 23px 25px 0 25px;
     color: #5b5e66;
-    font-size: 32px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .hot_rental_item .address {
     display: block;
     margin: 23px 25px 0 25px;
     color: #626364;
-    font-size: 19px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .hot_rental_item .location {
@@ -663,6 +657,7 @@ body {
     margin: 20px 25px 0 25px;
     color: #5b5e66;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .hot_rental_item .description {
@@ -675,9 +670,10 @@ body {
 
 .hot_rental_item .price_txt {
     display: inline-block;
-    margin: 0 0 0 25px;
+    margin: 60px 0 0 25px;
     color: #999999;
-    font-size: 23px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .hot_rental_item .price {
@@ -689,9 +685,9 @@ body {
 
 .hot_rental_item .s_price {
     display: inline-block;
-    margin: 0 0 0 33px;
     color: #de6e00;
     font-size: 34px;
+    line-height: 34px;
 }
 
 .life_format {
