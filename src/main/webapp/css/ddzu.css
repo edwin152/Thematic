@@ -109,7 +109,7 @@ input:-webkit-autofill {
 }
 
 .arrowUp {
-    background: url(../huantu/img/arrowUp@2x.png) no-repeat;
+    background: url(../img/arrowUp@2x.png) no-repeat;
     background-size: 12px 6px;
 }
 
@@ -824,7 +824,7 @@ a:link {
     margin: 20px 0 0 0;
     width: 80px;
     height: 28px;
-    background: url(../huantu/img/nav_logo.png) no-repeat 0 0;
+    background: url(../img/nav_logo.png) no-repeat 0 0;
     background-size: 80px 28px
 }
 

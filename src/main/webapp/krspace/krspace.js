@@ -1,8 +1,6 @@
-
-window.onload = function(){
+window.onload = function () {
     openSwiper();
 };
-
 
 function openSwiper() {
     new Swiper('#hit_swipe', {
