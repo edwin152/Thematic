@@ -7,7 +7,6 @@
 
     <!-- 启动页 -->
     <welcome-file-list>
-        <welcome-file id="huantu">huantu.html</welcome-file>
-        <welcome-file id="krspace">krspace.html</welcome-file>
+        <welcome-file>huantu.html</welcome-file>
     </welcome-file-list>
 </web-app>
