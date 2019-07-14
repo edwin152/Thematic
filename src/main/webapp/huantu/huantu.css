@@ -154,15 +154,6 @@ body {
     padding-right: 20px;
 }
 
-.headerPosition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-width: 1170px;
-    z-index: 10;
-}
-
 #swiper_top {
     width: 100%;
     min-width: 1170px;
