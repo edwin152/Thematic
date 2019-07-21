@@ -209,3 +209,7 @@ body {
 .view_more:visited {
     color: #909090;
 }
+
+.clickable:hover {
+    cursor: pointer;
+}
